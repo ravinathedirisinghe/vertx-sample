@@ -1,5 +1,8 @@
 package com.api.service;
+
 import java.io.IOException;
+
+import javax.validation.ValidationException;
 
 import com.api.utils.GenericCodec;
 import com.api.wrapper.ApiDto;
@@ -15,7 +18,8 @@ public class ApiHandlerMain extends AbstractVerticle {
     public static final String ADDRESS = "ApiHandler-Service";
 
     private static final Logger LOG = LoggerFactory.getLogger(ApiHandlerMain.class);
-
+    //https://vertx.io/docs/vertx-web-validation/java/
+    //https://vertx.io/docs/vertx-web-api-contract/java/
 
     @Override
     public void start() {
@@ -42,6 +46,20 @@ public class ApiHandlerMain extends AbstractVerticle {
                         ObjectMapper mapper = new ObjectMapper();
                         paymentRequest = mapper.readValue(body.toString(), PaymentRequest.class);
 
+                        if ( paymentRequest == null ) {
+                            routingContext.fail(400);
+                            return;
+                        }
+
+
+                        try {
+                            Integer.parseInt(paymentRequest.getChargingInformation().getAmount());
+                        }
+                        catch ( NumberFormatException e ) {
+                            routingContext.fail(400, e);
+                            return;
+                        }
+
                         ApiDto apiDto = new ApiDto();
                         apiDto.setPaymentRequest(paymentRequest);
                         apiDto.setRoutingContext(routingContext);
@@ -63,7 +81,27 @@ public class ApiHandlerMain extends AbstractVerticle {
                     }
 
                 });
+
+            })
+                    .failureHandler((routingContext) -> {
+                        Throwable failure = routingContext.failure();
+                        if ( failure instanceof ValidationException ) {
+                            // Something went wrong during validation!
+                            String validationErrorMessage = failure.getMessage();
+                        }
+                    });
+
+// Manage the validation failure for all routes in the router
+            commonObjWrapper.getRouter().errorHandler(400, routingContext -> {
+                if ( routingContext.failure() instanceof ValidationException ) {
+                    // Something went wrong during validation!
+                    String validationErrorMessage = routingContext.failure().getMessage();
+                } else {
+                    // Unknown 400 failure happened
+                    routingContext.response().setStatusCode(400).end();
+                }
             });
+
         });
     }
 

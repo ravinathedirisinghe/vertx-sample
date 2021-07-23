@@ -12,6 +12,23 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-web-api-contract:4.1.2" level="project" />
+    <orderEntry type="library" name="Maven: com.networknt:json-schema-validator:1.0.43" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.5" level="project" />
+    <orderEntry type="library" name="Maven: org.jruby.joni:joni:2.1.31" level="project" />
+    <orderEntry type="library" name="Maven: org.jruby.jcodings:jcodings:1.0.46" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger.parser.v3:swagger-parser-v3:2.0.21" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger.core.v3:swagger-models:2.1.4" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger.core.v3:swagger-core:2.1.4" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.activation:jakarta.activation-api:1.2.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.1" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger.core.v3:swagger-annotations:2.1.4" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger.parser.v3:swagger-parser-core:2.0.21" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.4" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-web-client:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-web-common:4.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-auth-common:4.2.0-SNAPSHOT" level="project" />
@@ -44,7 +61,7 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.modelmapper:modelmapper:2.3.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testcontainers:testcontainers:1.15.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.commons:commons-compress:1.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.rnorth.duct-tape:duct-tape:1.0.8" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.rnorth.visible-assertions:visible-assertions:2.1.2" level="project" />
