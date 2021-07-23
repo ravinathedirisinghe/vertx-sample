@@ -2,7 +2,6 @@ package com.api.service;
 
 import com.api.wrapper.PaymentRequest;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.impl.logging.Logger;
 import io.vertx.core.impl.logging.LoggerFactory;
@@ -36,15 +35,9 @@ public class MySqlConnection extends AbstractVerticle {
             LOG.info("Received message: " + paymentRequest);
             MySQLPool client = setMySqlConnection(vertx);
 
-            try {
-                selectData(vertx, paymentRequest.getEndUserId(), client);
-                insertData(vertx, paymentRequest.getEndUserId(), paymentRequest.getChargingInformation().getAmount(), client);
-
-            }
-            catch ( Exception e ) {
-                e.printStackTrace();
-            }
-
+            selectData(vertx, paymentRequest.getEndUserId(), client);
+            //check msisdn is in the db
+            insertData(vertx, paymentRequest.getEndUserId(), paymentRequest.getChargingInformation().getAmount(), client);
 
             LOG.info("Sending reply: " + paymentRequest);
 
@@ -69,7 +62,7 @@ public class MySqlConnection extends AbstractVerticle {
                 });
     }
 
-    public void selectData(Vertx vertx, String msisdn, MySQLPool client) throws Exception {
+    public void selectData(Vertx vertx, String msisdn, MySQLPool client) {
         try {
 
             client
@@ -78,14 +71,7 @@ public class MySqlConnection extends AbstractVerticle {
                         if ( ar.succeeded() ) {
                             RowSet < Row > result = ar.result();
                         } else {
-                            vertx.exceptionHandler(new Handler < Throwable >() {
-                                @Override
-                                public void handle(Throwable event) {
-                                    // do what you meant to do on uncaught exception, e.g.:
-                                    System.err.println("Error");
-                                    LOG.error(event + " throws exception: " + event.getStackTrace());
-                                }
-                            });
+                            System.out.println("Failure: " + ar.cause().getMessage());
                         }
 
                         // Now close the pool
