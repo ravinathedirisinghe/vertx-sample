@@ -1,14 +1,9 @@
 package com.api.service;
 
-import javax.validation.ValidationException;
-
-import com.api.wrapper.ErrorResponse;
 import com.api.wrapper.PaymentRequest;
-import com.api.wrapper.SuccessResponse;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
-import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.impl.logging.Logger;
 import io.vertx.core.impl.logging.LoggerFactory;
 import io.vertx.mysqlclient.MySQLConnectOptions;
