@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.vertx:vertx-core:4.2.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/4.2.0-SNAPSHOT/vertx-core-4.2.0-20210721.162013-26.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/4.2.0-SNAPSHOT/vertx-core-4.2.0-20210721.162013-26-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-core/4.2.0-SNAPSHOT/vertx-core-4.2.0-20210721.162013-26-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

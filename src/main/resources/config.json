@@ -1,0 +1,46 @@
+{
+"backendConf":{
+  "servicePort":8292,
+  "delimiter":":",
+  "serviceNames":["PaymentMINT", "paymentOS","testOS"],
+  "restCallTypes":["POST","GET","PUT"],
+  "_comment": "dataTypes only allowed for replaceFromRequest and variableTypes only allowed for variableTypes",
+  "variableTypes":["UUID","TIMESTAMPMILL"],
+  "dataTypes":["String","int"],
+"responseParams":[
+{
+  "serviceName":"PaymentMINT",
+  "type":"POST",
+  "listenUrl":"/paymentmint/:msisdn/transactions/amount",
+  "jsonBody":null,
+  "replaceFromRequest":null,
+  "paraTypes":null,
+  "setTotheRequest":["amountTransaction.serverReferenceCode:UUID:UUID","amountTransaction.resourceURL:URL:paymentChargeUrl"],
+  "sleepMilliseconds":100,
+  "responseCode":200
+},
+  {
+    "serviceName":"paymentOS",
+    "type":"POST",
+    "listenUrl":"/test/payment/:msisdn/transactions/amount",
+    "jsonBody":{  "test":"123423", "name":"sinhala", "age":{"originalServerReferenceCode":"1956","clientCorelator":"$1", "chargeInfo":{"currency":"$2", "tax":"$4"}}, "originalServerReferenceCode":"1345464", "amount":"$3"},
+    "replaceFromRequest":[ "age.chargeInfo.currency:String:$1","amount:int:$2"],
+    "paraTypes":[ "serverReferenceCode:UUID:$3","age.originalServerReferenceCode:TIMESTAMPMILL:$5"],
+    "setTotheRequest":null,
+    "sleepMilliseconds":100,
+    "responseCode":200
+},
+  {
+    "serviceName":"testOS",
+    "type":"POST",
+    "listenUrl":"/test/:msisdn/transactions/amount",
+    "jsonBody":{  "test":"test", "name":"testOS", "age":{"originalServerReferenceCode":"1956","clientCorelator":"$1", "chargeInfo":{"currency":"$2", "tax":"$4"}}, "originalServerReferenceCode":"1345464", "amount":"$3"},
+    "replaceFromRequest":[ "age.chargeInfo.currency:String:$1","amount:int:$2"],
+    "paraTypes":[ "serverReferenceCode:UUID:$3","originalServerReferenceCode:TIMESTAMPMILL:$5"],
+    "setTotheRequest":null,
+    "sleepMilliseconds":100,
+    "responseCode":200
+  }
+]
+}
+}
