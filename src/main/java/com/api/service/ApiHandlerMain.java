@@ -75,9 +75,8 @@ public class ApiHandlerMain extends AbstractVerticle {
 
                     }
                     catch ( IOException e ) {
-                        e.printStackTrace();
                         LOG.error("Error in message conversion " + e);
-
+                        throw new ValidationException(e.getMessage());
                     }
 
                 });
@@ -87,9 +86,11 @@ public class ApiHandlerMain extends AbstractVerticle {
                     .failureHandler(frc -> {
                         Throwable failure = frc.failure();
                         if ( failure instanceof ValidationException ) {
-                            frc.response().setStatusCode(404).end();
+                            frc.response().setStatusCode(407).setStatusMessage("Validation error in the request :" + failure.getMessage()).end();
+                        } else {
+                            frc.response().setStatusCode(500).setStatusMessage("Server internal error:" + failure.getMessage()).end();
                         }
-                        frc.response().setStatusCode(500).setStatusMessage("Server internal error:" + failure.getMessage()).end();
+
                     });
 
 
