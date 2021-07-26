@@ -35,7 +35,7 @@ public class MySqlConnection extends AbstractVerticle {
             LOG.info("Received message: " + paymentRequest);
             MySQLPool client = setMySqlConnection(vertx);
 
-            // selectData(vertx, paymentRequest.getEndUserId(), client);
+            selectData(vertx, paymentRequest.getEndUserId(), client);
             //check msisdn is in the db
             insertData(vertx, paymentRequest.getEndUserId(), paymentRequest.getChargingInformation().getAmount(), client);
 
@@ -59,6 +59,9 @@ public class MySqlConnection extends AbstractVerticle {
                     } else {
                         LOG.info("Failure: " + ar.cause().getMessage());
                     }
+
+                    // Now close the pool
+                    client.close();
                 });
     }
 
@@ -75,8 +78,6 @@ public class MySqlConnection extends AbstractVerticle {
                             LOG.info("Failure: " + ar.cause().getMessage());
                         }
 
-                        // Now close the pool
-                        client.close();
                     });
 
         }
