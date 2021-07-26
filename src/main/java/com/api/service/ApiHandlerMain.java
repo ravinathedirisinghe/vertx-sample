@@ -83,13 +83,15 @@ public class ApiHandlerMain extends AbstractVerticle {
                 });
 
             })
-                    .failureHandler((routingContext) -> {
-                        Throwable failure = routingContext.failure();
+
+                    .failureHandler(frc -> {
+                        Throwable failure = frc.failure();
                         if ( failure instanceof ValidationException ) {
-                            // Something went wrong during validation!
-                            String validationErrorMessage = failure.getMessage();
+                            frc.response().setStatusCode(404).end();
                         }
+                        frc.response().setStatusCode(500).setStatusMessage("Server internal error:" + failure.getMessage()).end();
                     });
+
 
 // Manage the validation failure for all routes in the router
             commonObjWrapper.getRouter().errorHandler(400, routingContext -> {

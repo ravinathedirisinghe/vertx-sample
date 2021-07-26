@@ -36,7 +36,7 @@ public class MainApp extends AbstractVerticle {
         vertx.eventBus().send("common", commonObjWrapper);
 
         httpServer
-                .requestHandler(router::accept)
+                .requestHandler(router::handle)
                 .listen(8091);
 
 

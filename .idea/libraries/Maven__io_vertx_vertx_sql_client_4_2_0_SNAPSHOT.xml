@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: io.vertx:vertx-sql-client:4.2.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-sql-client/4.2.0-SNAPSHOT/vertx-sql-client-4.2.0-SNAPSHOT.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-sql-client/4.2.0-SNAPSHOT/vertx-sql-client-4.2.0-20210725.043809-25.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-sql-client/4.2.0-SNAPSHOT/vertx-sql-client-4.2.0-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-sql-client/4.2.0-SNAPSHOT/vertx-sql-client-4.2.0-20210725.043809-25-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-sql-client/4.2.0-SNAPSHOT/vertx-sql-client-4.2.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/vertx/vertx-sql-client/4.2.0-SNAPSHOT/vertx-sql-client-4.2.0-20210725.043809-25-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

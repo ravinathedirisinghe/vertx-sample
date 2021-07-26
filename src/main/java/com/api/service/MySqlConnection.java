@@ -70,6 +70,7 @@ public class MySqlConnection extends AbstractVerticle {
                     .execute(ar -> {
                         if ( ar.succeeded() ) {
                             RowSet < Row > result = ar.result();
+
                         } else {
                             System.out.println("Failure: " + ar.cause().getMessage());
                         }
