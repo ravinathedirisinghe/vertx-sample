@@ -35,7 +35,7 @@ public class MySqlConnection extends AbstractVerticle {
             LOG.info("Received message: " + paymentRequest);
             MySQLPool client = setMySqlConnection(vertx);
 
-            selectData(vertx, paymentRequest.getEndUserId(), client);
+            // selectData(vertx, paymentRequest.getEndUserId(), client);
             //check msisdn is in the db
             insertData(vertx, paymentRequest.getEndUserId(), paymentRequest.getChargingInformation().getAmount(), client);
 

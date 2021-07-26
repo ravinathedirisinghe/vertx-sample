@@ -12,11 +12,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-json-schema:4.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:2.0.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-json-schema:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-web-api-contract:4.1.2" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-web:4.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-bridge-common:4.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-web:4.1.2" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-bridge-common:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: com.networknt:json-schema-validator:1.0.43" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.5" level="project" />
     <orderEntry type="library" name="Maven: org.jruby.joni:joni:2.1.31" level="project" />
     <orderEntry type="library" name="Maven: org.jruby.jcodings:jcodings:1.0.46" level="project" />
@@ -33,17 +35,17 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.4" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-web-client:4.1.2" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-web-common:4.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-auth-common:4.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-web-common:4.1.2" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-auth-common:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-sql-common:3.9.8" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-jdbc-client:4.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:c3p0:0.9.5.4" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.15" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.25" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-sql-client:4.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-sql-client:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-core:4.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-core:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.65.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.65.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.65.Final" level="project" />
@@ -56,28 +58,12 @@
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.65.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-resolver-dns:4.1.65.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec-dns:4.1.65.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-codegen:4.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-docgen:0.9.3" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-codegen:4.1.2" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-docgen:3.5.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-mysql-client:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.modelmapper:modelmapper:2.3.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.testcontainers:testcontainers:1.15.2" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.commons:commons-compress:1.20" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.rnorth.duct-tape:duct-tape:1.0.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.rnorth.visible-assertions:visible-assertions:2.1.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: net.java.dev.jna:jna:5.2.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.github.docker-java:docker-java-api:3.2.7" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.github.docker-java:docker-java-transport-zerodep:3.2.7" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.github.docker-java:docker-java-transport:3.2.7" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.vertx:vertx-sql-client:test-jar:tests:4.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.13.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.vertx:vertx-unit:4.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.65.Final" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.netty:netty-transport-native-unix-common:4.1.65.Final" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.65.Final" level="project" />
   </component>
 </module>
