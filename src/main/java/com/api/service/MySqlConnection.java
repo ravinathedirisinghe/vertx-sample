@@ -57,7 +57,7 @@ public class MySqlConnection extends AbstractVerticle {
                     if ( ar.succeeded() ) {
                         RowSet < Row > rows = ar.result();
                     } else {
-                        System.out.println("Failure: " + ar.cause().getMessage());
+                        LOG.info("Failure: " + ar.cause().getMessage());
                     }
                 });
     }
@@ -72,7 +72,7 @@ public class MySqlConnection extends AbstractVerticle {
                             RowSet < Row > result = ar.result();
 
                         } else {
-                            System.out.println("Failure: " + ar.cause().getMessage());
+                            LOG.info("Failure: " + ar.cause().getMessage());
                         }
 
                         // Now close the pool

@@ -9,9 +9,11 @@ import java.io.ObjectOutputStream;
 
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.eventbus.MessageCodec;
+import io.vertx.core.impl.logging.Logger;
+import io.vertx.core.impl.logging.LoggerFactory;
 
 public class GenericCodec < T > implements MessageCodec < T, T > {
-
+    private static final Logger LOG = LoggerFactory.getLogger(GenericCodec.class);
     private final Class < T > cls;
 
     public GenericCodec(Class < T > cls) {
@@ -63,7 +65,7 @@ public class GenericCodec < T > implements MessageCodec < T, T > {
             return msg;
         }
         catch ( IOException | ClassNotFoundException e ) {
-            System.out.println("Listen failed " + e.getMessage());
+            LOG.error("Listen failed " + e.getMessage());
         }
         finally {
             try {
