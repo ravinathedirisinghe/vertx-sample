@@ -1,5 +1,6 @@
 package com.api.service;
 
+import com.api.utils.CommonConstants;
 import com.api.wrapper.PaymentRequest;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
@@ -20,7 +21,7 @@ public class MySqlConnection extends AbstractVerticle {
     public void start() {
         LOG.info("Starting Mysql class");
 
-        vertx.eventBus().consumer(PaymentRequest.ADDRESS, message -> {
+        vertx.eventBus().consumer(CommonConstants.PAYMENT_REQUEST_ADDRESS, message -> {
 
             PaymentRequest paymentRequest = null;
 
@@ -29,15 +30,14 @@ public class MySqlConnection extends AbstractVerticle {
             }
 
             catch ( Exception e ) {
-                e.printStackTrace();
+                LOG.error("Received message: " + paymentRequest);
             }
 
-            LOG.info("Received message: " + paymentRequest);
             MySQLPool client = setMySqlConnection(vertx);
 
-            selectData(vertx, paymentRequest.getEndUserId(), client);
+            selectData(paymentRequest.getEndUserId(), client);
             //check msisdn is in the db
-            insertData(vertx, paymentRequest.getEndUserId(), paymentRequest.getChargingInformation().getAmount(), client);
+            insertData(paymentRequest.getEndUserId(), paymentRequest.getChargingInformation().getAmount(), client);
 
             LOG.info("Sending reply: " + paymentRequest);
 
@@ -49,7 +49,7 @@ public class MySqlConnection extends AbstractVerticle {
     }
 
     //https://vertx.io/docs/3.9.1/vertx-mysql-client/java/
-    public void insertData(Vertx vertx, String msisdn, String amount, MySQLPool client) {
+    public void insertData(String msisdn, String amount, MySQLPool client) {
 
         client
                 .preparedQuery("INSERT INTO payment (User, Amount) VALUES (?, ?)")
@@ -65,7 +65,7 @@ public class MySqlConnection extends AbstractVerticle {
                 });
     }
 
-    public void selectData(Vertx vertx, String msisdn, MySQLPool client) {
+    public void selectData(String msisdn, MySQLPool client) {
         try {
 
             client

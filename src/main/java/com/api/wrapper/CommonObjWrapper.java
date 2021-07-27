@@ -5,8 +5,6 @@ import io.vertx.ext.web.Router;
 
 public class CommonObjWrapper {
 
-    public static final String ADDRESS = "common";
-
     private Vertx vertx;
 
     private Router router;

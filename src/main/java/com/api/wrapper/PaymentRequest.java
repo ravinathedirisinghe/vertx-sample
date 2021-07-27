@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties( ignoreUnknown = true )
 public class PaymentRequest {
 
-    public static final String ADDRESS = "payment-request";
-
     private String endUserId;
 
     private ChargingInformation chargingInformation;

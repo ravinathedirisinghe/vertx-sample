@@ -2,6 +2,7 @@ package com.api.service;
 
 import java.io.IOException;
 
+import com.api.utils.CommonConstants;
 import com.api.wrapper.ApiDto;
 import com.api.wrapper.SuccessResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,18 +14,16 @@ import io.vertx.core.impl.logging.LoggerFactory;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.client.WebClient;
 
-public class ApiLogicHandler extends AbstractVerticle {
+public class SBRequestHandler extends AbstractVerticle {
 
-    public static final String ADDRESS = "api-handler";
-
-    private static final Logger LOG = LoggerFactory.getLogger(ApiLogicHandler.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SBRequestHandler.class);
 
     @Override
     public void start() {
 
         LOG.info("Starting Mysql class");
 
-        vertx.eventBus().consumer(ApiDto.ADDRESS, message -> {
+        vertx.eventBus().consumer(CommonConstants.SB_REQUEST_HANDLER_ADDRESS, message -> {
 
             ObjectMapper mapper = new ObjectMapper();
             ApiDto apiDto = null;

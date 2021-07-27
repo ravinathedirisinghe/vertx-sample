@@ -1,6 +1,4 @@
 
-O
-docker/mysql/docker-compose.yml,0\8\08c5ce71067d446d5b03418888b662c61f742cc9
 Š
 Z.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_11_4.xml,2\4\242f3bf5266b55b86b43c889c2f3b722b3203343
 ˆ
@@ -39,3 +37,25 @@ b
 2src/main/java/com/api/wrapper/SuccessResponse.java,8\d\8db08dc8160ae68a5d22d5b825143d55670d4476
 `
 0src/main/java/com/api/wrapper/ErrorResponse.java,3\4\3482ea3ab5d2b222aafad7b32e9144ca2fac1ed1
+k
+;.idea/libraries/Maven__io_vertx_vertx_auth_common_4_1_2.xml,1\d\1d0d7249a2f86b1c003f21a7ee9d7d2f58c1efcc
+m
+=.idea/libraries/Maven__io_vertx_vertx_bridge_common_4_1_2.xml,e\b\eb2f13edd3b3ae3c00c40551767af145a7879395
+g
+7.idea/libraries/Maven__io_vertx_vertx_codegen_4_1_2.xml,8\e\8e4b255ec27df492dfe30f3dab7cc97d93b3ed30
+d
+4.idea/libraries/Maven__io_vertx_vertx_core_4_1_2.xml,d\2\d2095a97be06860c4e72b8997eb721c262dfe075
+f
+6.idea/libraries/Maven__io_vertx_vertx_docgen_3_5_1.xml,b\e\becadc9c18f18343159f375a5488172e0a9414a2
+k
+;.idea/libraries/Maven__io_vertx_vertx_json_schema_4_1_2.xml,e\7\e7d93f6d679536bcb45ab78280038cfeaf79ae6c
+j
+:.idea/libraries/Maven__io_vertx_vertx_sql_client_4_1_2.xml,4\6\4649e7ff0a450f011ace6d5e9da262adfeca9d0b
+c
+3.idea/libraries/Maven__io_vertx_vertx_web_4_1_2.xml,c\4\c421cbb92cab7438480a9ed7ad3b75d2f9f03770
+j
+:.idea/libraries/Maven__io_vertx_vertx_web_common_4_1_2.xml,6\b\6b60acb4882da0111e1e0d53701456a731625172
+v
+F.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml,d\1\d1513b0f63449a4cb2f84a1b8918ef26285422a1
+e
+5.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml,e\6\e639c26d08947d6df74d6d8ca98a796cafd0830f

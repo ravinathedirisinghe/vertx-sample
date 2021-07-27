@@ -12,7 +12,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: javax.validation:validation-api:2.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-json-schema:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-web-api-contract:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-web:4.1.2" level="project" />

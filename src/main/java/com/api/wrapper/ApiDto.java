@@ -6,8 +6,6 @@ import io.vertx.ext.web.RoutingContext;
 @JsonIgnoreProperties( ignoreUnknown = true )
 public class ApiDto {
 
-    public static final String ADDRESS = "api-dto";
-
     private PaymentRequest paymentRequest;
 
     private RoutingContext routingContext;
