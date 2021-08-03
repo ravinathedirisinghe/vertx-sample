@@ -55,7 +55,17 @@ public class MySqlConnection extends AbstractVerticle {
                 .preparedQuery("INSERT INTO payment (User, Amount) VALUES (?, ?)")
                 .execute(Tuple.of(msisdn, amount), ar -> {
                     if ( ar.succeeded() ) {
-                        RowSet < Row > rows = ar.result();
+                        //RowSet < Row > rows = ar.result();
+                        RowSet<Row> result1 = ar.result();
+                        Row row1 = result1.iterator().next();
+                        System.out.println("First result: " + row1.getString(""));
+
+                        RowSet<Row> result2 = result1.next();
+                        Row row2 = result2.iterator().next();
+                        System.out.println("Second result: " + row2.getInteger(0));
+
+                        RowSet<Row> result3 = result2.next();
+                        System.out.println("Affected rows: " + result3.rowCount());
                     } else {
                         LOG.info("Failure: " + ar.cause().getMessage());
                     }
@@ -72,8 +82,8 @@ public class MySqlConnection extends AbstractVerticle {
                     .query("SELECT * FROM user WHERE user= " + msisdn)
                     .execute(ar -> {
                         if ( ar.succeeded() ) {
-                            RowSet < Row > result = ar.result();
-
+                            RowSet<Row> rows = ar.result();
+                            //System.out.println("Got " + rows. + " rows ");
                         } else {
                             LOG.info("Failure: " + ar.cause().getMessage());
                         }
